@@ -1,0 +1,658 @@
+openapi: 3.0.3
+info:
+  title: Dokumen API Cloud Function - OpenAPI 3.0
+  description: >-
+    Dokumen API Cloud Function Aplikasi Kesehatan HealHero
+  termsOfService: https://github.com/HealHeroo/swagger
+  contact:
+    url: https://healhero.my.id/proposal3/menu/biodata
+  license:
+    name: HealHero Package
+    url: https://github.com/HealHeroo/be_healhero
+  version: 1.0.11
+externalDocs:
+  description: Repo GCF
+  url: https://github.com/HealHeroo/gcf_healhero
+servers:
+  - url: https://asia-southeast2-peak-equator-402307.cloudfunctions.net
+tags:
+  - name: Auth
+    description: Auth to Access to API
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://github.com/HealHeroo/gcf_healhero/tree/main/login
+  - name: SignUp Pengguna
+    description: Registrasi Pengguna
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://github.com/HealHeroo/gcf_healhero/tree/main/signup_pengguna
+  - name: SignUp Driver
+    description: Registrasi Driver
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://github.com/HealHeroo/gcf_healhero/tree/main/signup_driver
+  - name: User
+    description: Get Data User oleh Admin
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://github.com/HealHeroo/gcf_healhero/tree/main/user
+  - name: Pengguna
+    description: Data Pengguna
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://github.com/HealHeroo/gcf_healhero/tree/main/pengguna
+  - name: Driver
+    description: Data Driver
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://github.com/HealHeroo/gcf_healhero/tree/main/driver
+  - name: Obat
+    description: Data Obat
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://github.com/HealHeroo/gcf_healhero/tree/main/obat
+  - name: Order
+    description: Data Order
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://github.com/HealHeroo/gcf_healhero/tree/main/order
+paths:
+  /login:
+    post:
+      tags:
+        - Auth
+      summary: Login get Token and Role
+      description: Login and Get User Token
+      operationId: authService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Login"
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+        "405":
+          description: Invalid input
+  /signup_pengguna:
+    post:
+      tags:
+        - SignUp Pengguna
+      summary: Signup Pengguna
+      description: Register a new Pengguna
+      operationId: signupPengguna
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignupPenggunaRequest"
+      responses:
+        "201":
+          description: Pengguna signed up successfully
+        "400":
+          description: Invalid input or Pengguna already exists
+  /signup_driver:
+    post:
+      tags:
+        - SignUp Driver
+      summary: Signup Driver
+      description: Register a new Driver
+      operationId: signupDriver
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignupDriverRequest"
+      responses:
+        "201":
+          description: Driver signed up successfully
+        "400":
+          description: Invalid input or Driver already exists
+  /user:
+    get:
+      tags:
+        - User
+      summary: Get User By ID
+      description: List Data User
+      operationId: getUserByID
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          description: ID of the User
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserData"
+        "400":
+          description: Invalid status value
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+  /pengguna:
+    get:
+      tags:
+        - Pengguna
+      summary: Get Pengguna by ID oleh Admin
+      description: Get a Pengguna by its ID
+      operationId: getPenggunaById
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          description: ID of the Pengguna
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pengguna"
+        "404":
+          description: Pengguna not found
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+    put:
+      tags:
+        - Pengguna
+      summary: Update Pengguna oleh Admin & Pengguna
+      description: Update an existing Pengguna
+      operationId: updatePengguna
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the Pengguna
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Pengguna"
+            examples:
+              pengguna:
+                $ref: "#/components/examples/UpdateProfilPengguna"
+      responses:
+        "200":
+          description: Pengguna updated successfully
+        "404":
+          description: Pengguna not found
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+  /driver:
+    get:
+      tags:
+        - Driver
+      summary: Get Driver by ID
+      description: Get a Driver by its ID
+      operationId: getDriverById
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          description: ID of the Driver
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Driver"
+        "404":
+          description: Driver not found
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+    put:
+      tags:
+        - Driver
+      summary: Update Driver
+      description: Update an existing Driver
+      operationId: updateDriver
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the Driver
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Driver"
+            examples:
+              driver:
+                $ref: "#/components/examples/UpdateProfilDriver"
+      responses:
+        "200":
+          description: Driver updated successfully
+        "404":
+          description: Driver not found
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+  /obat_healhero:
+    post:
+      tags:
+        - Obat
+      summary: Create Obat
+      description: Create a new Obat
+      operationId: createObat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Obat"
+      responses:
+        "201":
+          description: Obat created successfully
+        "400":
+          description: Invalid input
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+    get:
+      tags:
+        - Obat
+      summary: Get Obat by ID
+      description: Get a Obat by its ID
+      operationId: getObatById
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          description: ID of the Obat
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Obat"
+        "404":
+          description: Obat not found
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+    put:
+      tags:
+        - Obat
+      summary: Update Obat
+      description: Update an existing Obat
+      operationId: updateObat
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the Obat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Obat"
+      responses:
+        "200":
+          description: Obat updated successfully
+        "404":
+          description: Obat not found
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+    delete:
+      tags:
+        - Obat
+      summary: Delete Obat
+      description: Delete a Obat by its ID
+      operationId: deleteObat
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the Obat
+      responses:
+        "204":
+          description: Obat deleted successfully
+        "404":
+          description: Obat not found
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+  /order_healhero:
+    post:
+      tags:
+        - Order
+      summary: Create Order
+      description: Create a new Order
+      operationId: createOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Order"
+      responses:
+        "201":
+          description: Order created successfully
+        "400":
+          description: Invalid input
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+    get:
+      tags:
+        - Order
+      summary: Get Order by ID
+      description: Get a Order by its ID
+      operationId: getOrderById
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          description: ID of the Order
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Order"
+        "404":
+          description: Order not found
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+    delete:
+      tags:
+        - Order
+      summary: Delete Order
+      description: Delete a Order by its ID
+      operationId: deleteOrder
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the Order
+      responses:
+        "204":
+          description: Order deleted successfully
+        "404":
+          description: Order not found
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
+components:
+  schemas:
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+          example: yourmail@gmail.com
+        password:
+          type: string
+          example: secret
+    AuthResponse:
+      type: object
+      properties:
+        status:
+          type: bool
+          example: true
+        message:
+          type: string
+          example: message
+        token:
+          type: string
+          example: token
+        role:
+          type: string
+          example: admin
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: cbdcbdcbdc
+        email:
+          type: string
+          example: admin@gmail.com
+        role:
+          type: string
+          example: admin
+    UserData:
+      type: object
+      properties:
+        data:
+          type: object
+        akun:
+          type: object
+          properties:
+            _id:
+              type: string
+              example: cbdcbdcbdc
+            email:
+              type: string
+              example: admin@gmail.com
+            role:
+              type: string
+              example: admin
+
+    SignupPenggunaRequest:
+      type: object
+      properties:
+        namalengkap:
+          type: string
+          example: Bella Swan
+        tanggallahir:
+          type: string
+          example: "1997-07-04"
+        jeniskelamin:
+          type: string
+          example: Perempuan
+        nomorhp:
+          type: string
+          example: 123456789
+        alamat:
+          type: string
+          example: Street ABCD
+        akun:
+          type: object
+          properties:
+            email:
+              type: string
+              example: pengguna@example.com
+            password:
+              type: string
+              example: yourpassword
+          required:
+            - email
+            - password
+      required:
+        - namalengkap
+        - tanggallahir
+        - jeniskelamin
+        - nomorhp
+        - alamat
+        - akun
+    SignupDriverRequest:
+      type: object
+      properties:
+        namalengkap:
+          type: string
+          example: Budi Setiadi
+        jeniskelamin:
+          type: string
+          example: Laki-laki
+        nomorhp:
+          type: string
+          example: 123456
+        alamat:
+          type: string
+          example: Street Driver ABCD
+        platmotor:
+          type: string
+          example: D 1230 AKJ
+        akun:
+          type: object
+          properties:
+            email:
+              type: string
+              example: driver@example.com
+            password:
+              type: string
+              example: yourpassword
+          required:
+            - email
+            - password
+      required:
+        - namalengkap
+        - jeniskelamin
+        - nomorhp
+        - kategori
+        - alamat
+        - platmotor
+        - akun
+    Pengguna:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 1
+        namalengkap:
+          type: string
+          example: Bella Swan
+        penggunaId:
+          type: string
+          example: 123456
+        email:
+          type: string
+          example: pengguna@example.com
+    Driver:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 1
+        name:
+          type: string
+          example: Driver Name
+        address:
+          type: string
+          example: Driver Address
+        email:
+          type: string
+          example: driver@example.com
+    Obat:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 1
+        nama_obat:
+          type: string
+          example: Obat Name
+        jenis_obat:
+          type: string
+          example: Analgesik
+        keterangan:
+          type: string
+          example: 500 Mg
+        harga:
+          type: string
+          example: Rp 8.000
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 1
+        penggunaId:
+          type: string
+          example: 222
+        driverId:
+          type: string
+          example: 333
+        obatId:
+          type: string
+          example: 444
+        namaobat:
+          type: string
+          example: Paracetamol
+        quantity:
+          type: string
+          example: 3
+        total_cost:
+          type: string
+          example: Rp 24.000
+        status:
+          type: string
+          example: Success
+  requestBodies:
+    AuthReq:
+      description: Request Authentication
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Login"
+    UserArray:
+      description: List of user object
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/AuthResponse"
+  securitySchemes:
+    token:
+      type: apiKey
+      name: Authorization
+      in: header
+  examples:
+    UpdateProfilPengguna:
+      summary: Update Profil oleh Pengguna
+      value:
+        namalengkap: Belle Swin
+        tanggallahir: 1999-08-12
+        jeniskelamin: Perempuan
+        nomorhp: 1273273
+        alamat: Home BCD
+    UpdateProfilDriver:
+      summary: Update Profil oleh Driver
+      value:
+        namalengkap: Budi Setiadi
+        jeniskelamin: Laki-Laki
+        nomorhp: 3827622
+        alamat: Jalan Driver
+        platmotor: B 1234 DH
