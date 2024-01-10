@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>HealHero</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/heroIcon.png" rel="icon">
+  
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  
+    <!-- =======================================================
+    * Template Name: Impact
+    * Updated: Sep 18 2023 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+  </head>
+<div>
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>HealHero<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kategori.html">Category</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+  
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+  
+    </div>
+  </header><!-- End Header -->
+  
+<!-- end navbar -->
+
+<div class="container mt-5">
+    <h2 class="mb-4">Checkout</h2>
+    
+    <!-- Order Summary -->
+    <div class="container mt-5">
+      <div class="card mb-4">
+          <div class="card-header">
+              Order Summary
+          </div>
+          <div class="card-body" id="tabelCheckout">
+              <!-- Order details will be displayed here -->
+  
+              <!-- Quantity, Price, and Total Price Form -->
+              <div id="orderForm">
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="namaobat">Nama Obat</label>
+                      <select class="form-select" id="namaobat" required>
+                        <option value="Paracetamol">Paracetamol</option>
+                        <option value="Ibuprofen">Ibuprofen</option>
+                        <option value="Aspirin">Aspirin</option>
+                        <!-- Add more medicine options as needed -->
+                      </select>
+                    </div>
+                      <div class="form-group col-md-4">
+                          <label for="quantity">Quantity</label>
+                          <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity" required>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="harga">Harga</label>
+                        <select class="form-select" id="harga" required>
+                            <option value="5000">Rp. 5.000</option>
+                            <option value="7000">Rp. 7.000</option>
+                            <option value="10000">Rp. 10.000</option>
+                        </select>
+                    </div>
+                      <div class="form-group col-md-4">
+                          <label for="totalharga">Total Harga</label>
+                          <input type="number" class="form-control" id="totalharga" placeholder="Total Price" readonly>
+                      </div>
+                  </div>
+                  <div>
+                    <h4>Customer Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nama">Nama Pembeli</label>
+                            <input type="text" class="form-control" id="nama" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="alamat">Alamat</label>
+                          <input type="text" class="form-control" id="alamat" placeholder="Alamat Lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nomorhp">Nomor HP</label>
+                            <input type="tel" class="form-control" id="nomorhp" placeholder="Nomor HP" required>
+                        </div> 
+                    </div>
+                    <div class="alert alert-info mt-4" id="totalAlert" style="display: none;">
+                      <p><strong>Total:</strong><span id="totalAmount">0.00</span></p>
+                  </div>
+            
+            
+                    <!-- Add more customer information fields as needed -->
+            
+                    
+                    <!-- Submit Button -->
+                    <div class="col-md-6 text-md-end">
+                      <button type="submit" onclick="Order()" class="btn btn-info">Order</button>
+                    </div>
+                    <div class="mt-4" id="status" style="display: none;"></div>
+                </div>
+            </div>
+                  <!-- You can add more form fields as needed -->
+              </div>
+          </div>
+      </div>
+  
+      <!-- Total Price Alert -->
+
+      <!-- <div class="alert mt-4" id="orderStatus" style="display: none;"></div> -->
+    </div>
+  </div>
+
+    <!-- Customer Information Form -->
+    <!-- <div>
+        <h4>Customer Information</h4>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nama">Nama Pembeli</label>
+                <input type="text" class="form-control" id="nama" placeholder="Nama Anda" required>
+            </div>
+            <div class="form-group">
+              <label for="alamat">Alamat</label>
+              <input type="text" class="form-control" id="alamat" placeholder="Alamat Lengkap" required>
+            </div>
+            <div class="form-group">
+                <label for="nomorhp">Nomor HP</label>
+                <input type="tel" class="form-control" id="nomorhp" placeholder="Nomor HP" required>
+            </div>
+            
+        </div> -->
+
+
+        <!-- Add more customer information fields as needed -->
+
+        
+        <!-- Submit Button -->
+        <!-- <div class="col-md-6 text-md-end">
+          <button type="submit" onclick="Order()" class="btn btn-info">Order</button>
+        </div>
+        <div class="mt-4" id="status" style="display: none;"></div>
+    </div>
+</div> -->
+
+<!-- Bootstrap JS and Popper.js -->
+<script>
+  function formatRupiah(amount) {
+    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(amount);
+    var orderStatusElement = document.getElementById("orderStatus");
+  }
+
+  function updateOrderStatusMessage(status, message) {
+    var orderStatusElement = document.getElementById("status");
+    orderStatusElement.style.display = "block";
+
+    if (status === "success") {
+      orderStatusElement.classList.add("alert-success");
+      orderStatusElement.classList.remove("alert-danger");
+      orderStatusElement.innerText = "Order successfully placed. " + message;
+    } else {
+      orderStatusElement.classList.add("alert-danger");
+      orderStatusElement.classList.remove("alert-success");
+      orderStatusElement.innerText = "Failed to place the order. " + message;
+    }
+  }
+
+  // Function to handle the order button click
+
+  // Function to update total price
+  function updateTotalPrice() {
+      var quantity = parseFloat(document.getElementById("quantity").value);
+      var price = parseFloat(document.getElementById("harga").value);
+
+      if (!isNaN(quantity) && !isNaN(price)) {
+        var totalharga = quantity * price;
+        document.getElementById("totalharga").value = formatRupiah(totalharga);
+
+        // Display total price in the alert
+        document.getElementById("totalAmount").innerText = formatRupiah(totalharga);
+        document.getElementById("totalAlert").style.display = "block";
+      } else {
+        document.getElementById("totalharga").value = "";
+
+        // Hide the alert if either quantity or price is not a number
+        document.getElementById("totalAlert").style.display = "none";
+      }
+
+      // Update order status message
+      // updateOrderStatus();
+    }
+  // Event listeners for quantity and price changes
+  var quantityElement = document.getElementById("quantity");
+  var priceElement = document.getElementById("harga"); // Change "price" to "harga"
+
+  if (quantityElement) {
+    quantityElement.addEventListener("input", updateTotalPrice);
+  }
+
+  if (priceElement) {
+    priceElement.addEventListener("input", updateTotalPrice);
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+
+  <script type="module" src="/pengguna/assets/js/order.js"></script> -->
+
+</body>
+</html>
