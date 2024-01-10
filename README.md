@@ -2,16 +2,16 @@
 
 **_Sinopsis Naskah_**
 
-Buku "Membangun Sistem Manajemen Stok Gudang Menggunakan Golang dan JavaScript" merupakan panduan komprehensif yang memandu pembaca melalui proses pembangunan sistem manajemen stok gudang yang efisien. Mulai dari pembuatan backend dengan Golang hingga pemanfaatan Google Cloud Functions (GCF) untuk implementasi serverless, buku ini menyoroti aspek-aspek penting dalam pengembangan sistem tersebut. Pembaca akan dipandu melalui langkah-langkah pembuatan frontend responsif menggunakan JavaScript, termasuk logika bisnis di sisi klien dan interaksi dengan API backend. Dengan penjelasan mendalam dan tutorial praktis, buku ini memberikan wawasan yang kuat tentang bagaimana mengintegrasikan teknologi JavaScript dan Golang untuk menciptakan sistem manajemen stok gudang yang handal dan terkini. Sebuah sumber daya esensial bagi pengembang yang ingin memperdalam pengetahuan mereka tentang pengembangan sistem manajemen stok gudang dengan menggunakan teknologi JavaScript dan Golang.
+Buku "Web Cloud dengan Golang, MongoDB, Bootstrap, dan GCP" memberikan panduan lengkap bagi pengembang perangkat lunak yang ingin mempelajari dan menerapkan teknologi terkini dalam pengembangan aplikasi web. Buku ini mengajarkan pembaca cara membangun aplikasi pemesanan obat yang efektif dan responsif dengan menggunakan berbagai teknologi seperti Golang, MongoDB, Bootstrap, Swagger, GitHub Pages, dan Google Cloud Platform.Buku ini juga memberikan pemahaman dasar tentang teknologi yang akan digunakan, seperti Golang, MongoDB, Bootstrap, Swagger, GitHub Pages, dan Google Cloud Platform. Selain itu, pembaca akan mendapatkan pemahaman tentang tujuan buku ini dan manfaatnya bagi pembaca untuk meningkatkan kemampuan mereka dalam pengembangan web.
 
-![COVER BUKU](https://github.com/warehousemanagement88/bukpedp3_stocksynergy/assets/147298795/279c82b0-880d-4d5f-b4ed-d47f71916c36)
+![Cover Book HealHero](https://github.com/HealHeroo/bukpedp3_healhero/assets/94597289/d7d7e534-8049-4b58-b544-59720f4ab758)
 
 **Biografi Penulis**
 
-**Penulis 1 :** Agita Nurfadillah. Lahir di Sukabumi, 10 Maret 2003. Saat ini adalah mahasiswa Semester 5 Program Studi D4 Teknik Informatika di Universitas Logistik dan Bisnis Internasional.
+![Rizkyria](https://github.com/HealHeroo/bukpedp3_healhero/assets/94597289/3ab02ac2-bdb4-4601-9eb1-938164d4ff0f)
 
-![Agita](https://github.com/warehousemanagement88/bukpedp3_stocksynergy/assets/147298795/5a0432a6-b908-4499-bfcd-3e75f913cf96)
+**Penulis 1 :** Rizkyria A.P Hutabarat. Lahir di Kota PematangSiantar pada tanggal 18 November 2003. Pendidikan tingkat dasar di Kota PematangSiantar, Menengah di Kota Jambi dan pindah lagi ke Tangerang ketika kelas 9 SMP selanjutnya bersekolah di SMAN 22 KAB Tangerang. Saat ini melanjutkan pendidikan di Universitas Logistik dan Bisnis Internasional (ULBI) Bandung pada program studi D4 Teknik Informatika.
 
-**Penulis 2 :** Al Novianti Ramadhani Sulaksono. Lahir di Tulungagung, 25 November 2002. Saat ini adalah mahasiswa Semester 5 Program Studi D4 Teknik Informatika di Universitas Logistik dan Bisnis Internasional.
+![Juwita](https://github.com/HealHeroo/bukpedp3_healhero/assets/94597289/22658b98-ffc7-4912-a658-35a8f396a28a)
 
-![Alnovi](https://github.com/warehousemanagement88/bukpedp3_stocksynergy/assets/147298795/13b298c2-f30a-44d8-859f-de54ef81f8a8)
+**Penulis 2 :** Juwita Stefany Hutapea. Lahir di kota Medan pada tanggal 13 Juli 2003. Pendidikan  tingkat dasar hingga menengah dan atas ditempuh di Medan. Saat ini melanjutkan pendidikan di Universitas Logistik dan Bisnis Internasional (ULBI) Bandung pada program studi D4 Teknik Informatika.
