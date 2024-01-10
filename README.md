@@ -8,7 +8,7 @@ Buku "Web Cloud dengan Golang, MongoDB, Bootstrap, dan GCP" memberikan panduan l
 
 ### Biografi Penulis
 
-![Rizkyria](https://github.com/HealHeroo/bukpedp3_healhero/assets/94597289/3ab02ac2-bdb4-4601-9eb1-938164d4ff0f)
+![Rizkyria](https://github.com/HealHeroo/bukpedp3_healhero/assets/94597289/3ab02ac2-bdb4-4601-9eb1-938164d4ff0f?raw=true)
 
 **Penulis 1 :** Rizkyria A.P Hutabarat. Lahir di Kota PematangSiantar pada tanggal 18 November 2003. Pendidikan tingkat dasar di Kota PematangSiantar, Menengah di Kota Jambi dan pindah lagi ke Tangerang ketika kelas 9 SMP selanjutnya bersekolah di SMAN 22 KAB Tangerang. Saat ini melanjutkan pendidikan di Universitas Logistik dan Bisnis Internasional (ULBI) Bandung pada program studi D4 Teknik Informatika.
 
