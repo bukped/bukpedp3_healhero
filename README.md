@@ -4,7 +4,7 @@
 
 Buku "Web Cloud dengan Golang, MongoDB, Bootstrap, dan GCP" memberikan panduan lengkap bagi pengembang perangkat lunak yang ingin mempelajari dan menerapkan teknologi terkini dalam pengembangan aplikasi web. Buku ini mengajarkan pembaca cara membangun aplikasi pemesanan obat yang efektif dan responsif dengan menggunakan berbagai teknologi seperti Golang, MongoDB, Bootstrap, Swagger, GitHub Pages, dan Google Cloud Platform.Buku ini juga memberikan pemahaman dasar tentang teknologi yang akan digunakan, seperti Golang, MongoDB, Bootstrap, Swagger, GitHub Pages, dan Google Cloud Platform. Selain itu, pembaca akan mendapatkan pemahaman tentang tujuan buku ini dan manfaatnya bagi pembaca untuk meningkatkan kemampuan mereka dalam pengembangan web.
 
-![Cover Book HealHero](https://github.com/HealHeroo/bukpedp3_healhero/assets/94597289/d7d7e534-8049-4b58-b544-59720f4ab758)
+![Cover Book HealHero](https://github.com/bukped/bukpedp3_healhero/assets/147236707/00046440-2aa0-463e-ac09-7bee8e95f7ac)
 
 ### Biografi Penulis
 
